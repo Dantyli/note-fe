@@ -2,7 +2,7 @@ name: deploy note
 on: 
   push:
     branches:
-      - master
+      - main
 jobs: 
   build: 
     runs-on: ubuntu-latest
@@ -28,7 +28,7 @@ jobs:
            password: ${{secrets.TOKEN}}
            host: ${{ secrets.IP }}
            username: ${{ secrets.USER }}
-           remote: ${{ secrets.TARGET }} #
+           remote: /usr/webapp/note #
       # 重启服务
       - name: deploy
         uses: appleboy/ssh-action@master
@@ -37,7 +37,7 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{secrets.TOKEN}}
           script: |
-            cd /usr/webapp
+            cd /usr/webapp/note
             tar zxvf release.tgz
             npm install --production
             npm start
