@@ -24,11 +24,11 @@ jobs:
         uses: garygrossgarten/github-action-scp@release
         with: 
            rmRemote: true
-           local: release.tgz
+           local: "./release.tgz"
            password: ${{secrets.TOKEN}}
            host: ${{ secrets.IP }}
            username: ${{ secrets.USER }}
-           remote: /usr/webapp/note #
+           remote: "/usr/webapp/note" #
       # 重启服务
       - name: deploy
         uses: appleboy/ssh-action@master
