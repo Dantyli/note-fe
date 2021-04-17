@@ -1,15 +1,15 @@
 <template>
   <div class="blog_contianer">
-    <Header />
+    <!-- <Header /> -->
     <Nuxt />
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
 // import Header from '../components/header'
-import Header from '../components/header'
+// import Header from '../components/header'
 export default Vue.extend({
-  components: { Header }
+  // components: { Header }
 })
 </script>
 <style>
