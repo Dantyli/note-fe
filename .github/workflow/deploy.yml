@@ -1,0 +1,43 @@
+name: deploy note
+on: 
+  push:
+    branches:
+      - master
+jobs: 
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+     
+      #打包构建
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+      - run: npm install
+      - run: npm run build
+
+      #压缩文件
+      - run: tar -zcvf release.tgz .nuxt static nuxt.config.js package.json
+
+      #scp上传压缩包
+      - name: scp
+        uses: garygrossgarten/github-action-scp@release
+        with: 
+           rmRemote: true
+           local: ./release.tgz
+           password: ${{secrets.TOKEN}}
+           host: ${{ secrets.IP }}
+           username: ${{ secrets.USER }}
+           remote: ${{ secrets.TARGET }} #
+      # 重启服务
+      - name: deploy
+        uses: appleboy/ssh-action@master
+        with: 
+          host: ${{ secrets.IP }}
+          username: ${{ secrets.USER }}
+          password: ${{secrets.TOKEN}}
+          script: |
+            cd /usr/webapp
+            tar zxvf release.tgz
+            npm install --production
+            npm start
