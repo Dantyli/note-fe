@@ -15,16 +15,16 @@ jobs:
         uses: actions/setup-node@v1
       - run: npm install
       - run: npm run build
-
+      - run: mkdir temp
       #压缩文件
-      #- run: tar -zcvf release.tgz .nuxt static nuxt.config.js package.json
+      - run: tar -zcvf ./temp/release.tgz .nuxt static nuxt.config.js package.json
 
       #scp上传压缩包
       - name: scp
         uses: garygrossgarten/github-action-scp@release
         with: 
            rmRemote: true
-           local: ".nuxt,static,nuxt.config.js,package.json"
+           local: "temp"
            password: ${{secrets.TOKEN}}
            host: ${{ secrets.IP }}
            username: ${{ secrets.USER }}
@@ -38,5 +38,6 @@ jobs:
           password: ${{secrets.TOKEN}}
           script: |
             cd /usr/webapp/note
+            tar zxvf release.tgz
             npm install --production
             npm start
