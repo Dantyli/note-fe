@@ -29,7 +29,7 @@ jobs:
            host: ${{ secrets.IP }}
            username: ${{ secrets.USER }}
            remote: "/usr/webapp/note" #
-      # 重启服务
+      # 重启服务 pm2 start npm --name "blog" -- run start
       - name: deploy
         uses: appleboy/ssh-action@master
         with: 
@@ -40,4 +40,5 @@ jobs:
             cd /usr/webapp/note
             tar zxvf release.tgz
             npm install --production
-            pm2 start npm --name "blog" -- run start
+            pm2 restart blog 
+            
