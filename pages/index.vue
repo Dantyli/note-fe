@@ -3,7 +3,7 @@
     <div>
       <!-- <Logo /> -->
       <h1 class="title">
-        blog - test
+        blog
       </h1>
       <nuxt-link to="/home">首页</nuxt-link>
       <nuxt-link to="/posts">blog</nuxt-link>
