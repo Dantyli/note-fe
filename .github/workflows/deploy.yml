@@ -40,4 +40,4 @@ jobs:
             cd /usr/webapp/note
             tar zxvf release.tgz
             npm install --production
-            npm start
+            pm2 start npm --name "blog" -- run start
