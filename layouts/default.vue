@@ -1,6 +1,6 @@
 <template>
   <div class="blog_contianer">
-    <!-- <Header /> -->
+    <Header />
     <Nuxt />
   </div>
 </template>
@@ -14,7 +14,7 @@ export default Vue.extend({
 </script>
 <style>
 .blog_contianer{
-  padding: 20px;
+  /* padding: 20px; */
 }
 html {
   font-family:

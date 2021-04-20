@@ -10,7 +10,8 @@
         </span>
       </template>
       <a-list-item-meta :description="item.description">
-        <a slot="title" :href="item.href">{{ item.title }}</a>
+        <!-- <a slot="title" :href="item.href">{{ item.title }}</a> -->
+        <a slot="title" @click="goDetail(item.id)">{{ item.title }}</a>
         <a-avatar slot="avatar" :src="item.avatar" />
       </a-list-item-meta>
       {{ item.content }}
@@ -24,6 +25,7 @@ const listData:any = [];
 for (let i = 0; i < 23; i++) {
   listData.push({
     href: 'https://www.antdv.com/',
+    id: i,
     title: `ant design vue part ${i}`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     description:
@@ -48,6 +50,11 @@ export default Vue.extend({
         { type: 'message', text: '2' },
       ],
     };
+    },
+    methods: {
+      goDetail(id:any) {
+        this.$router.push({path:'/detail',query:{id:id}})
+      }
     }
 })
 </script>
@@ -59,6 +66,7 @@ export default Vue.extend({
   .ant-list-vertical .ant-list-item{
     width: 40%;
     margin-right: 10%;
+    display: inline-block;
     &:nth-child(2n){
       margin-right: 0;
     }

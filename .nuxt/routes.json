@@ -1,0 +1,44 @@
+[
+  {
+    "name": "articlelist",
+    "path": "/articlelist",
+    "component": "/Users/xuzhen/Desktop/学习/dantyli/blog/note-fe/pages/articlelist.vue",
+    "chunkName": "pages/articlelist",
+    "_name": "_f4e7cf7c"
+  },
+  {
+    "name": "detail",
+    "path": "/detail",
+    "component": "/Users/xuzhen/Desktop/学习/dantyli/blog/note-fe/pages/detail.vue",
+    "chunkName": "pages/detail",
+    "_name": "_bb6db0da"
+  },
+  {
+    "name": "index0",
+    "path": "/index0",
+    "component": "/Users/xuzhen/Desktop/学习/dantyli/blog/note-fe/pages/index0.vue",
+    "chunkName": "pages/index0",
+    "_name": "_09f19260"
+  },
+  {
+    "name": "posts",
+    "path": "/posts",
+    "component": "/Users/xuzhen/Desktop/学习/dantyli/blog/note-fe/pages/posts.vue",
+    "chunkName": "pages/posts",
+    "_name": "_09125afe"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/xuzhen/Desktop/学习/dantyli/blog/note-fe/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_52e6e800"
+  },
+  {
+    "name": "id",
+    "path": "/:id",
+    "component": "/Users/xuzhen/Desktop/学习/dantyli/blog/note-fe/pages/_id.vue",
+    "chunkName": "pages/_id",
+    "_name": "_a9e22b30"
+  }
+]
