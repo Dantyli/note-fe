@@ -5,9 +5,11 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _f4e7cf7c = () => interopDefault(import('../pages/articlelist.vue' /* webpackChunkName: "pages/articlelist" */))
+const _1caa4694 = () => interopDefault(import('../pages/blogpreview.vue' /* webpackChunkName: "pages/blogpreview" */))
 const _bb6db0da = () => interopDefault(import('../pages/detail.vue' /* webpackChunkName: "pages/detail" */))
 const _09f19260 = () => interopDefault(import('../pages/index0.vue' /* webpackChunkName: "pages/index0" */))
 const _09125afe = () => interopDefault(import('../pages/posts.vue' /* webpackChunkName: "pages/posts" */))
+const _41ea536c = () => interopDefault(import('../pages/sendblog.vue' /* webpackChunkName: "pages/sendblog" */))
 const _52e6e800 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 const _a9e22b30 = () => interopDefault(import('../pages/_id.vue' /* webpackChunkName: "pages/_id" */))
 
@@ -27,6 +29,10 @@ export const routerOptions = {
     component: _f4e7cf7c,
     name: "articlelist"
   }, {
+    path: "/blogpreview",
+    component: _1caa4694,
+    name: "blogpreview"
+  }, {
     path: "/detail",
     component: _bb6db0da,
     name: "detail"
@@ -38,6 +44,10 @@ export const routerOptions = {
     path: "/posts",
     component: _09125afe,
     name: "posts"
+  }, {
+    path: "/sendblog",
+    component: _41ea536c,
+    name: "sendblog"
   }, {
     path: "/",
     component: _52e6e800,

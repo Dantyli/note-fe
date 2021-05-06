@@ -1,5 +1,5 @@
 <template>
-  <div class="blog_list">
+  <div class="blog_container">
     <a-list item-layout="vertical" size="large" :pagination="pagination" :data-source="listData">
     <div slot="footer"><b>ant design vue</b> footer part</div>
     <a-list-item slot="renderItem" key="item.title" slot-scope="item, index">
@@ -59,10 +59,6 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss" scoped>
-  .blog_list{
-    width: 90%;
-    margin: 0 auto;
-  }
   .ant-list-vertical .ant-list-item{
     width: 40%;
     margin-right: 10%;

@@ -7,6 +7,13 @@
     "_name": "_f4e7cf7c"
   },
   {
+    "name": "blogpreview",
+    "path": "/blogpreview",
+    "component": "/Users/xuzhen/Desktop/学习/dantyli/blog/note-fe/pages/blogpreview.vue",
+    "chunkName": "pages/blogpreview",
+    "_name": "_1caa4694"
+  },
+  {
     "name": "detail",
     "path": "/detail",
     "component": "/Users/xuzhen/Desktop/学习/dantyli/blog/note-fe/pages/detail.vue",
@@ -26,6 +33,13 @@
     "component": "/Users/xuzhen/Desktop/学习/dantyli/blog/note-fe/pages/posts.vue",
     "chunkName": "pages/posts",
     "_name": "_09125afe"
+  },
+  {
+    "name": "sendblog",
+    "path": "/sendblog",
+    "component": "/Users/xuzhen/Desktop/学习/dantyli/blog/note-fe/pages/sendblog.vue",
+    "chunkName": "pages/sendblog",
+    "_name": "_41ea536c"
   },
   {
     "name": "index",

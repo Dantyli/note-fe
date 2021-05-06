@@ -14,6 +14,10 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 import nuxt_plugin_plugin_d9a736f0 from 'nuxt_plugin_plugin_d9a736f0' // Source: ./components/plugin.js (mode: 'all')
 import nuxt_plugin_antdui_2b2dca90 from 'nuxt_plugin_antdui_2b2dca90' // Source: ../plugins/antd-ui (mode: 'all')
+import nuxt_plugin_vuehtml5editor_e1bb686c from 'nuxt_plugin_vuehtml5editor_e1bb686c' // Source: ../plugins/vue-html5-editor.js (mode: 'client')
+import nuxt_plugin_vuequilleditor_7d434d24 from 'nuxt_plugin_vuequilleditor_7d434d24' // Source: ../plugins/vue-quill-editor.js (mode: 'client')
+import nuxt_plugin_vuemarkdown_fa8317ac from 'nuxt_plugin_vuemarkdown_fa8317ac' // Source: ../plugins/vue-markdown.js (mode: 'client')
+import nuxt_plugin_index_4af86e6c from 'nuxt_plugin_index_4af86e6c' // Source: ../directive/index.js (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -179,6 +183,22 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_antdui_2b2dca90 === 'function') {
     await nuxt_plugin_antdui_2b2dca90(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_vuehtml5editor_e1bb686c === 'function') {
+    await nuxt_plugin_vuehtml5editor_e1bb686c(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_vuequilleditor_7d434d24 === 'function') {
+    await nuxt_plugin_vuequilleditor_7d434d24(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_vuemarkdown_fa8317ac === 'function') {
+    await nuxt_plugin_vuemarkdown_fa8317ac(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_index_4af86e6c === 'function') {
+    await nuxt_plugin_index_4af86e6c(app.context, inject)
   }
 
   // Lock enablePreview in context

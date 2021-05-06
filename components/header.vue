@@ -1,7 +1,7 @@
 <template>
   <div class="head">
     <a-row type="flex" justify="space-between">
-      <a-col flex="300px" style="text-align:left;padding-left:20px"><h1 class="blog_logo">我的博客</h1></a-col>
+      <a-col flex="300px" style="text-align:left;padding-left:20px"><nuxt-link to="/"><h1 class="blog_logo">我的博客</h1></nuxt-link></a-col>
       <a-col flex="auto" style="text-align:right">
         <a-input-search placeholder="input search text" style="width: 200px" @search="onSearch" />
         <a-menu mode="horizontal" style="display:inline-block;text-align:right;margin-left:20px">
