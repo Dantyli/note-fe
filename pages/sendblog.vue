@@ -19,7 +19,7 @@
       <template v-for="tag in tags">
       <a-checkable-tag
         :key="tag"
-        :checked="selectedTags.indexOf(tag) > -1"
+        :checked="selectedTags && selectedTags.indexOf(tag) > -1"
         @change="checked => handleChange(tag, checked)"
       >
         {{ tag }}
@@ -43,7 +43,7 @@ export default Vue.extend({
       handbook:"#### 这是手册",
       title:'',
       tags: ['vue', 'javascript', 'react', 'typescript'],
-      selectedTags: [],
+      selectedTags: [''],
     }
   },
   mounted() {
@@ -55,10 +55,12 @@ export default Vue.extend({
   // }
     this.handbook = localStorage.getItem('content') || ''
     this.title = localStorage.getItem('title') || ''
-    this.selectedTags = localStorage.getItem('tag')
+    let selectedTags: string | null = localStorage.getItem('tag')
+    console.log('selectedTags',selectedTags)
+    this.selectedTags = selectedTags ? selectedTags.split(',') : []
   },
   methods:{
-    handleChange(tag, checked) {
+    handleChange(tag:any, checked:any) {
       const { selectedTags } = this;
       const nextSelectedTags = checked
         ? [...selectedTags, tag]
@@ -73,16 +75,18 @@ export default Vue.extend({
          'title': this.title,
          'tag': this.selectedTags
        }
+       let selectedTags = this.selectedTags.join(',')
        localStorage.setItem('blogContent', `${blogContent.toString()}`)
        localStorage.setItem('content',this.handbook)
        localStorage.setItem('title', this.title)
-       localStorage.setItem('tag', this.selectedTags)
+       localStorage.setItem('tag', selectedTags)
        this.$router.push({path:'/blogpreview'})
      },
      sendBlog() {
+       let selectedTags = this.selectedTags.join(',')
        localStorage.setItem('content',this.handbook)
        localStorage.setItem('title', this.title)
-       localStorage.setItem('tag', this.selectedTags)
+       localStorage.setItem('tag', selectedTags)
        this.$router.push({path:'/detail'})
      },
   }
