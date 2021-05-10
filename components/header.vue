@@ -5,10 +5,10 @@
       <a-col flex="auto" style="text-align:right">
         <a-input-search placeholder="input search text" style="width: 200px" @search="onSearch" />
         <a-menu mode="horizontal" style="display:inline-block;text-align:right;margin-left:20px">
-          <a-menu-item>Vue</a-menu-item>
-          <a-menu-item>Javascript</a-menu-item>
-          <a-menu-item>React</a-menu-item>
-          <a-menu-item>Typescript</a-menu-item>
+          <a-menu-item><nuxt-link :to="{path: 'articlelist',query:{type:'vue'}}">Vue</nuxt-link></a-menu-item>
+          <a-menu-item><nuxt-link :to="{path: 'articlelist',query:{type:'javascript'}}">Javascript</nuxt-link></a-menu-item>
+          <a-menu-item><nuxt-link :to="{path: 'articlelist',query:{type:'react'}}">React</nuxt-link></a-menu-item>
+          <a-menu-item><nuxt-link :to="{path: 'articlelist',query:{type:'typescript'}}">Typescript</nuxt-link></a-menu-item>
         </a-menu>
       </a-col> 
     </a-row>

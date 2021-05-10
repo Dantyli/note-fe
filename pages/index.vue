@@ -4,9 +4,9 @@
       <img class="home_img" src="~/assets/images/hero.png" />
       <h1 class="my_blog">我的博客</h1>
       <p class="home_description">记录每天遇到的一些问题</p>
-      <!-- <a-button type="primary" @click="gotolist">
+      <a-button type="primary" @click="gotolist">
         Get Started <a-icon type="arrow-right" />
-      </a-button> -->
+      </a-button>
       <a-button type="primary" @click="sendBlog">
         发布blog <a-icon type="arrow-right" />
       </a-button>

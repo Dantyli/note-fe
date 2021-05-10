@@ -68,7 +68,13 @@ export default Vue.extend({
       console.log('You are interested in: ', nextSelectedTags);
       this.selectedTags = nextSelectedTags;
     },
-     saveBlog() {},
+     saveBlog() {
+       let selectedTags = this.selectedTags.join(',')
+       localStorage.setItem('content',this.handbook)
+       localStorage.setItem('title', this.title)
+       localStorage.setItem('tag', selectedTags)
+      //  this.$router.push({path:'/articlelist'})
+     },
      previewBlog() {
        const blogContent = {
          'content': this.handbook,
@@ -83,10 +89,7 @@ export default Vue.extend({
        this.$router.push({path:'/blogpreview'})
      },
      sendBlog() {
-       let selectedTags = this.selectedTags.join(',')
-       localStorage.setItem('content',this.handbook)
-       localStorage.setItem('title', this.title)
-       localStorage.setItem('tag', selectedTags)
+       
        this.$router.push({path:'/detail'})
      },
   }

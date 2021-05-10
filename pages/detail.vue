@@ -4,7 +4,7 @@
       <a-layout-sider width="400" >
     <a-list size="large" bordered :data-source="data">
       <a-list-item slot="renderItem" slot-scope="item, index">
-        {{ item }}
+        <nuxt-link :to="{path: 'detail', query: {id:item.id}}">{{ item.title }}</nuxt-link>
       </a-list-item>
       <!-- <div slot="header">
         Header
@@ -27,11 +27,10 @@
 </template>
 <script lang="ts">
 const data = [
-  'Racing car sprays burning fuel into crowd.',
-  'Japanese princess to wed commoner.',
-  'Australian walks 100km after outback crash.',
-  'Man charged over missing wedding girl.',
-  'Los Angeles battles huge wildfires.',
+  {title:'Racing car sprays burning fuel into crowd.',id:0},
+  {title:'Japanese princess to wed commoner.',id:1},
+  {title:'Australian walks 100km after outback crash.',id:2},
+  {title:'Man charged over missing wedding girl.',id:3,}
 ];
 import Vue from 'vue'
 import marked from 'marked'
